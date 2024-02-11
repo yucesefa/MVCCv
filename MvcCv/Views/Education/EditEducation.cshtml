@@ -1,0 +1,28 @@
+﻿@model MvcCv.Models.Entity.tblEducation
+@{
+    ViewBag.Title = "EditEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h<form method="post">
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("School Name:")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Section Name:")
+    @Html.TextBoxFor(x => x.Subtitle1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Description:")
+    @Html.TextBoxFor(x => x.Subtitle2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("GNO:")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <br />
+    @Html.Label("Date:")
+    @Html.TextAreaFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Edit</button>
+</form>

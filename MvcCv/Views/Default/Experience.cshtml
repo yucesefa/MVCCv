@@ -1,0 +1,49 @@
+﻿@using MvcCv.Models.Entity
+@model List<tblExpreience>
+<style>
+    .deneyim-card {
+        background: var(--clr-white);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: var(--radius);
+        transition: var(--transition);
+    }
+
+    .experience-card:hover {
+        background: var(--clr-primary-5);
+        color: var(--clr-white);
+    }
+
+        .experience .card-body {
+            transition: var(--transition);
+        }
+
+    .experience-card:hover .card-body {
+        color: var(--clr-white);
+    }
+</style>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">
+        <i class="fas fa-briefcase"></i> Experience
+    </h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-12 mb-4">
+                <div class="card experience-card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-md-row justify-content-between">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-0">@item.Title</h3>
+                                <div class="subheading mb-3">@item.Subtitle</div>
+                                <p class="text-justify">@item.Description</p>
+                            </div>
+                            <div class="flex-shrink-0"><span class="text-primary">@item.Date</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
